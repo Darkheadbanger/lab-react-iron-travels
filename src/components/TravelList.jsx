@@ -37,14 +37,14 @@ function TravelList() {
                   <span className="label all-inclusive">All Inclusive</span>
                 )}
               </div>
+              <button
+                onClick={() => {
+                  deleteTrip(aTrip.id);
+                }}
+              >
+                Delete
+              </button>
             </div>
-            <button
-              onClick={() => {
-                deleteTrip(aTrip.id);
-              }}
-            >
-              Delete
-            </button>
           </div>
         );
       })}

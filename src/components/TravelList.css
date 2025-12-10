@@ -52,3 +52,8 @@
   padding: 6px 12px;
   cursor: pointer;
 }
+
+.travels-info button{
+    margin: 15px 0 0 0;
+    background-color: #aba9ab;
+}
