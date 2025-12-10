@@ -4,6 +4,11 @@ import "../components/TravelList.css";
 
 function TravelList() {
   const [trips, setTrips] = useState(travelPlansData);
+  const deleteTrip = (tripId) => {
+    const filteredTrips = trips.filter((trip) => trip.id !== tripId);
+    setTrips(filteredTrips);
+  };
+
   return (
     <div>
       {trips.map((aTrip, keyIndex) => {
