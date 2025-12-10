@@ -1,0 +1,36 @@
+import { useState } from "react";
+import travelPlansData from "../assets/travel-plans.json";
+import "../components/TravelList.css";
+
+
+function TravelList() {
+  const [trips, setTrips] = useState(travelPlansData);
+  return (
+    <div>
+      {trips.map((aTrip, keyIndex) => {
+        return (
+          <div className="travels-container" key={keyIndex}>
+            <div className="travels-image">
+              <img
+                src={aTrip.image}
+                alt="A photo of the voyage"
+              />
+            </div>
+            <div className="travels-info">
+              <p>
+                {aTrip.destination} ({aTrip.days} Days)
+              </p>
+              <p>{aTrip.description}</p>
+              <p>
+                <strong>Price: </strong>
+                {aTrip.totalCost} €
+              </p>
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
+export default TravelList;
