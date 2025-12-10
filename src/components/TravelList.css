@@ -24,3 +24,31 @@
   flex: 1;
   text-align: left;
 }
+
+.labels {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.label {
+  padding: 4px 10px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  border-radius: 12px;
+  color: white;
+}
+.great-deal {
+  background-color: green;
+}
+.premium {
+  background-color: purple;
+}
+.all-inclusive {
+  background-color: orange;
+}
+.travels-container button {
+  margin-left: 15px;
+  padding: 6px 12px;
+  cursor: pointer;
+}

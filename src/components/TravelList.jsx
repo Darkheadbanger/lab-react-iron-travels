@@ -2,7 +2,6 @@ import { useState } from "react";
 import travelPlansData from "../assets/travel-plans.json";
 import "../components/TravelList.css";
 
-
 function TravelList() {
   const [trips, setTrips] = useState(travelPlansData);
   return (
@@ -11,10 +10,7 @@ function TravelList() {
         return (
           <div className="travels-container" key={keyIndex}>
             <div className="travels-image">
-              <img
-                src={aTrip.image}
-                alt="A photo of the voyage"
-              />
+              <img src={aTrip.image} alt="A photo of the voyage" />
             </div>
             <div className="travels-info">
               <p>
@@ -25,7 +21,25 @@ function TravelList() {
                 <strong>Price: </strong>
                 {aTrip.totalCost} €
               </p>
+              <div className="labels">
+                {aTrip.totalCost <= 350 && (
+                  <span className="label great-deal">Great Deal</span>
+                )}
+                {aTrip.totalCost >= 1500 && (
+                  <span className="label premium">Premium</span>
+                )}
+                {aTrip.allInclusive && (
+                  <span className="label all-inclusive">All Inclusive</span>
+                )}
+              </div>
             </div>
+            <button
+              onClick={() => {
+                deleteTrip(aTrip.id);
+              }}
+            >
+              Delete
+            </button>
           </div>
         );
       })}
